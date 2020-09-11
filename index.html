@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Javascript</title>
+</head>
+<style>
+    body>div {
+        margin-top: 5%;
+        padding-left: 2%;
+        padding-right: 2%;
+        margin-left: 25%;
+        margin-right: 25%;
+        padding-bottom: 2%;
+        border: 3px solid #9c9898;
+    }
+
+    h1,
+    h2 {
+        text-align: center;
+    }
+    h1{
+        font-size: 1.8em;
+    }
+    h2{
+        font-size: 1.2em;
+    }
+    div{
+        font-size: 1em;
+        background-color: beige;
+        border-radius: 4%;
+    }
+    body div div {
+        border: 1px solid #535151;
+        padding-left: 2%;
+    }
+
+    input {
+        border: 1px solid #535151;
+        padding: 2%;
+        margin: 1%;
+        width: 80%;
+    }
+    input:hover{
+        background-color: #9c9898;
+    }
+
+    p:not(:first-child) {
+        border: 1px solid #535151;
+        background-color: #d7ebdd71;
+        padding: 2%;
+        margin: 2%;
+        width: 80%;
+        margin-left: 8%;
+        border-radius: 10%;
+        border-style: groove;
+        border-color: rgb(2, 2, 63);
+    }
+</style>
+
+<body>
+    <div>
+        <h1>Length Converter App</h1>
+        <hr>
+        <h2>Type a value in the Miles field to convert the value into Yards, Feet, Inches, KiloMeters, Meters, CM:</h2>
+        <div>
+            <p>
+                <label><strong>Miles</strong></label>
+                <input id="inputMiles" type="number" oninput="LengthConverter(this.value)"
+                    onchange="LengthConverter(this.value)">
+            </p>
+            <p>Yards : <span id="outputYards"></span></p>
+            <p>Feet : <span id="outputFeet"></span></p>
+            <p>Inches : <span id="outputInches"></span></p>
+            <p>Kilometers : <span id="outputKilometers"></span></p>
+            <p>Meters : <span id="outputMeters"></span></p>
+            <p>cm : <span id="outputcm"></span></p>
+        </div>
+    </div>
+    <script>
+        function LengthConverter(valNum) {
+            document.getElementById("outputYards").innerHTML = valNum * 1760;
+            document.getElementById("outputFeet").innerHTML = valNum * 5280;
+            document.getElementById("outputInches").innerHTML = valNum * 63360;
+            document.getElementById("outputKilometers").innerHTML = valNum / 0.62137;
+            document.getElementById("outputMeters").innerHTML = valNum / 0.00062137;
+            document.getElementById("outputcm").innerHTML = valNum / 0.0000062137;
+        }
+
+    </script>
+</body>
+
+</html>
